@@ -2,3 +2,5 @@ NPM (NODE PACKET MANAGER) {npm i [packet-manager]}
 
 Discord.js
 google-translate-api-web
+
+Text Editor (REQUIRED, Not part of NPM)
