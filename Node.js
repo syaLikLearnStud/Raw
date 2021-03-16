@@ -8,7 +8,7 @@ const Discord = require('discord.js'),
 
 client.on('ready', () => {
     console.log('Running!');
-    client.user.setActivity('all Prefix and Commands', { type: "LISTENING"}).catch(console.error)
+    client.user.setActivity('all Prefix and Commands', { type: "ANY"}).catch(console.error) // LISTENING, WATCHING, STREAMING, PLAYING
 });
 
 client.on('message', message => {
@@ -35,7 +35,7 @@ client.on('message', message => {
             }).then(res => {
                 //res.from.language.iso
                 from = langs[res.from.language.iso];
-                const embed = new Discord.MessageEmbed()
+                const embed = new Discord.RichEmbed()
                     .setColor('#0099ff')
                     .setAuthor('ForTuneInt Translator', 'https://cdn.discordapp.com/attachments/781180265129050132/820521954124627978/ba848da92768204f75906e49aa50bec0.png')
                     .setDescription('Here ya go lol')
@@ -68,18 +68,18 @@ client.on('message', message => {
             break;
             case 'about':
                 if(args[0] = 'about');
-                const newEmbed = new Discord.MessageEmbed()
+                const newEmbed = new Discord.RichEmbed()
                 .setColor('#2b32e0')
-                .setThumbnail('https://cdn.discordapp.com/attachments/781180265129050132/820545443300769822/5845cd230b2a3b54fdbaecf7.png')
-                .setDescription('Hello! I am Plain Translator Bot, Hosted in Heroku, made by EROR, Coded using JavaScript, aka Discord.js ,code is raw and paste, you can download the repositories at the GitHub!, oh yeah, Im sorry I have no time left, bye~')
+                .setThumbnail('Input your png link here')
+                .setDescription('Anything you want')
                 .setTimestamp()
-                .setFooter(`Requested By: ${message.author.username}`)
+                .setFooter(`Requested By: ${message.author.username}`) // You can edit this
                 message.channel.send(newEmbed)
                 break;
 
             case 'ping':
                 if(args[0] = 'ping');
-            const secEmbed = new Discord.MessageEmbed()
+            const secEmbed = new Discord.RichEmbed()
             .setColor('')
             .setAuthor(`🏓Your Ping Latency is ${Date.now() - message.createdTimestamp}ms. Your API Ping Latency is ${Math.round(client.ws.ping)}ms`)
             .setTimestamp()
@@ -125,7 +125,7 @@ client.on('message', message => {
  const target = message.mentions.members.first();
 
  if(memb.hasPermission('ADMINISTRATOR') || memb.hasPermission('MUTE_MEMBERS')){
-    target.roles.add(mutedRole);
+    targets.roles.add(mutedRole);
     message.channel.send('Successfully Muted target')
  }else{
      message.channel.send(`${message.author.username} You do not has permission to mute members`)
@@ -136,114 +136,4 @@ client.on('message', message => {
 })
 
 
-client.login(token);
-
-// languages
-
-var langs = {
-    'auto': 'Automatic',
-    'af': 'Afrikaans',
-    'sq': 'Albanian',
-    'am': 'Amharic',
-    'ar': 'Arabic',
-    'hy': 'Armenian',
-    'az': 'Azerbaijani',
-    'eu': 'Basque',
-    'be': 'Belarusian',
-    'bn': 'Bengali',
-    'bs': 'Bosnian',
-    'bg': 'Bulgarian',
-    'ca': 'Catalan',
-    'ceb': 'Cebuano',
-    'ny': 'Chichewa',
-    'zh-cn': 'Chinese Simplified',
-    'zh-tw': 'Chinese Traditional',
-    'co': 'Corsican',
-    'hr': 'Croatian',
-    'cs': 'Czech',
-    'da': 'Danish',
-    'nl': 'Dutch',
-    'en': 'English',
-    'eo': 'Esperanto',
-    'et': 'Estonian',
-    'tl': 'Filipino',
-    'fi': 'Finnish',
-    'fr': 'French',
-    'fy': 'Frisian',
-    'gl': 'Galician',
-    'ka': 'Georgian',
-    'de': 'German',
-    'el': 'Greek',
-    'gu': 'Gujarati',
-    'ht': 'Haitian Creole',
-    'ha': 'Hausa',
-    'haw': 'Hawaiian',
-    'iw': 'Hebrew',
-    'hi': 'Hindi',
-    'hmn': 'Hmong',
-    'hu': 'Hungarian',
-    'is': 'Icelandic',
-    'ig': 'Igbo',
-    'id': 'Indonesian',
-    'ga': 'Irish',
-    'it': 'Italian',
-    'ja': 'Japanese',
-    'jw': 'Javanese',
-    'kn': 'Kannada',
-    'kk': 'Kazakh',
-    'km': 'Khmer',
-    'ko': 'Korean',
-    'ku': 'Kurdish (Kurmanji)',
-    'ky': 'Kyrgyz',
-    'lo': 'Lao',
-    'la': 'Latin',
-    'lv': 'Latvian',
-    'lt': 'Lithuanian',
-    'lb': 'Luxembourgish',
-    'mk': 'Macedonian',
-    'mg': 'Malagasy',
-    'ms': 'Malay',
-    'ml': 'Malayalam',
-    'mt': 'Maltese',
-    'mi': 'Maori',
-    'mr': 'Marathi',
-    'mn': 'Mongolian',
-    'my': 'Myanmar (Burmese)',
-    'ne': 'Nepali',
-    'no': 'Norwegian',
-    'ps': 'Pashto',
-    'fa': 'Persian',
-    'pl': 'Polish',
-    'pt': 'Portuguese',
-    'ma': 'Punjabi',
-    'ro': 'Romanian',
-    'ru': 'Russian',
-    'sm': 'Samoan',
-    'gd': 'Scots Gaelic',
-    'sr': 'Serbian',
-    'st': 'Sesotho',
-    'sn': 'Shona',
-    'sd': 'Sindhi',
-    'si': 'Sinhala',
-    'sk': 'Slovak',
-    'sl': 'Slovenian',
-    'so': 'Somali',
-    'es': 'Spanish',
-    'su': 'Sundanese',
-    'sw': 'Swahili',
-    'sv': 'Swedish',
-    'tg': 'Tajik',
-    'ta': 'Tamil',
-    'te': 'Telugu',
-    'th': 'Thai',
-    'tr': 'Turkish',
-    'uk': 'Ukrainian',
-    'ur': 'Urdu',
-    'uz': 'Uzbek',
-    'vi': 'Vietnamese',
-    'cy': 'Welsh',
-    'xh': 'Xhosa',
-    'yi': 'Yiddish',
-    'yo': 'Yoruba',
-    'zu': 'Zulu'
-};
+client.login(token); // This Token is from node.json (or any json you has)
