@@ -11,6 +11,6 @@ Yes lol, now stahp, code ur own
 
 For More Information, check Requirements.txt
 
-#Misc
+# Misc
 Btw This Code is based on Translator Bot Repository on Github. Yes I'm Sorry for Uploading it back, but It's Different I modification
 my Own Bot so it will be the Different Bot, thanks.
