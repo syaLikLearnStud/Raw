@@ -5,8 +5,4 @@ google-translate-api-web
 
 Text Editor (REQUIRED, Not part of NPM)
 
-a json ("create a file named.json and then add")
-{
-"token" = "your token lol",
-"prefix" = "ur prefix ofc",
-}
+a JSON or .env variables
