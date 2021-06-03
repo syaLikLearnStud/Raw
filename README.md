@@ -14,3 +14,8 @@ For More Information, check Requirements.txt
 # Misc
 Btw This Code is based on Translator Bot Repository on Github. Yes I'm Sorry for Uploading it back, but It's Different I modification
 my Own Bot so it will be the Different Bot, thanks.
+
+# Instant
+if you have Git CLI (get it here http://git-scm.com) use **git clone [LINK]**
+
+if you got Github CLI use as Github Instructed.
